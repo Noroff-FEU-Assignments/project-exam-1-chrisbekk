@@ -1,6 +1,6 @@
 const fetchAPI = {
-    baseURL: "theupload.wp-cms.online/wp-json/wp/v2/",
-    domain: "theupload.wp-cms.online",
+    baseURL: "https://theupload.wp-cms.online/wp-json/wp/v2/",
+    domain: "https://theupload.wp-cms.online",
     posts: async function(){
         const response = await fetch(`${this.baseURL}posts?_embed=`)
         const data = await response.json()
