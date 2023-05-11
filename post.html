@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://kit.fontawesome.com/2f05bfb463.js" crossorigin="anonymous"></script>
+    <script defer type="module" src="/public/post.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="container">
+            <p class="header-logo" data-clickable="true">The UPLOAD</p>
+            <nav>
+                <i class="fa-solid fa-bars icons fa-2xl" id="navbar-icon" data-open="false" data-clickable="true"></i>
+                <div class="nav-menu-widescreen">
+                    <span class="searchbar-container">
+                        <label for="searchbar">
+                            <i class="fa-solid fa-magnifying-glass fa-xl searchbar-icon" id="search-icon" data-open="false" data-clickable="true"></i>
+                            
+                        </label>
+                        <input type="text" id="searchbar" class="searchbar reset-input">
+                    </span>
+    
+                    <p class="nav-menu-item component-item" data-clickable="true">Articles</p>
+                    <p class="nav-menu-item component-item" data-clickable="true">About</p>
+                    <p class="nav-menu-item component-item" data-clickable="true">Contact</p>
+                </div>
+                <div class="nav-menu">
+                    <span class="searchbar-container">
+                        <label for="searchbar">
+                            <i class="fa-solid fa-magnifying-glass fa-xl searchbar-icon" id="search-icon" data-open="false" data-clickable="true"></i>
+                            
+                        </label>
+                        <input type="text" id="searchbar" class="searchbar reset-input">
+                    </span>
+    
+                    <p class="nav-menu-item component-item" data-clickable="true">Articles</p>
+                    <p class="nav-menu-item component-item" data-clickable="true">About</p>
+                    <p class="nav-menu-item component-item" data-clickable="true">Contact</p>
+                </div>
+            </nav>
+        </header>
+        <main class="container">
+            <section>
+                <article></article>
+            </section>
+            <section>
+                <h1 class="section-header">Comments</h1>
+                <div class="comments-container">
+                    <form class="form">
+                        <p class="form-title">Add a Comment</p>
+                        <input type="text" class="form-input author-name" id="comment-name" aria-placeholder="Name" placeholder="Name" data-minreq="4" data-maxreq="10" data-input="true">
+                        <textarea name="comment-content" class="comment-content-area" id="comment-content" data-minreq="3" data-maxreq="75" data-input="true"></textarea>
+                        <button class="form-button" id="comment-btn" type="button">Comment</button>
+                    </form>
+                </div>
+            </section>
+            <section class="comments-section">
+
+            </section>
+
+
+        </main>
+        <footer class="">
+            <span>
+                <p class="footer-title absolute">The UPLOAD</p>
+                <p class="footer-item">Back to Top</p>
+            </span>
+            <span>
+                <p class="footer-title margin-top">Navigation</p>
+                <p class="footer-item">Home</p>
+                <p class="footer-item">Articles</p>
+                <p class="footer-item">About</p>
+                <p class="footer-item">Contact</p>
+            </span>
+            
+        </footer>
+    </div>
+
+    
+</body>
+</html>
