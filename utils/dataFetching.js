@@ -4,7 +4,7 @@ const fetchAPI = {
     featuredPostsURL: "https://theupload.wp-cms.online/wp-json/wp/v2/posts?categories=7&_embed",
     posts: async function(searchPara){
         const response = await fetch(`${this.baseURL}posts?${searchPara}&_embed=`,{
-            cache: 'default'
+            cache: 'no-store'
         })
         const data = await response.json()
         console.log(data)
@@ -40,6 +40,7 @@ const fetchAPI = {
             })
             
             const newDate = new Date(post.date).toString().slice(4,15)
+            
             const removeHTMLTags = input => new DOMParser().parseFromString(input, "text/html").body.innerText
             const excerpt = removeHTMLTags(post.excerpt.rendered)
             const content = removeHTMLTags(post.content.rendered)

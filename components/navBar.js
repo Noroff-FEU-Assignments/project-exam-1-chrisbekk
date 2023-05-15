@@ -1,7 +1,7 @@
 function navBar(){
     const header = document.querySelector("header")
-    const bars = header.querySelector(".fa-bars")
-    const menu = header.querySelector(".menu")
+    const bars = document.querySelector(".fa-bars")
+    const menu = document.querySelector(".menu")
     bars.addEventListener("click", (e)=> {
         menu.classList.toggle("visible")
     })
