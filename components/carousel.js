@@ -1,5 +1,4 @@
-const postContainer = document.querySelector(".hero")
-const wrapper = document.querySelector(".wrapper")
+const postContainer = document.querySelector(".widescreen")
 const body = document.querySelector("body")
 
 
@@ -16,7 +15,7 @@ function carousel(posts){
             return document.location.href = `travels.html?id=${currentPost.id}`
         }
         const post = document.createElement("div")
-        post.classList.add("post")
+        post.classList.add("card")
         const image = document.createElement("img")
         image.src = currentPost.image
 
@@ -62,7 +61,7 @@ function carousel(posts){
         post.append(image, postDetailsContainer, PostSubtitle)
         postsArray.push(post)
         console.log(currentIndex)
-        wrapper.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
+        postContainer.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
         postContainer.append(postsArray[currentIndex])
 
         arrowIconUp.addEventListener("click", (e)=>{
@@ -70,13 +69,13 @@ function carousel(posts){
                 currentIndex = postsArray.length - 1
                 post.remove()
                 postContainer.append(postsArray[currentIndex])
-                wrapper.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
+                postContainer.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
                 body.dataset.theme = currentIndex
             } else{
                 --currentIndex
                 post.remove()
                 postContainer.append(postsArray[currentIndex])
-                wrapper.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
+                postContainer.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
                 body.dataset.theme = currentIndex
             }
         })
@@ -85,13 +84,13 @@ function carousel(posts){
                 currentIndex = 0
                 post.remove()
                 postContainer.append(postsArray[currentIndex])
-                wrapper.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
+                postContainer.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
                 body.dataset.theme = currentIndex
             } else{
                 ++currentIndex
                 post.remove()
                 postContainer.append(postsArray[currentIndex])
-                wrapper.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
+                postContainer.style.setProperty("--background-image", `url(${posts[currentIndex].image})`)
                 body.dataset.theme = currentIndex
             }
         })
