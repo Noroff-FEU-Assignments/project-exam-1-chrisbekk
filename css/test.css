@@ -1,0 +1,20 @@
+.container{
+    margin: 0 auto;
+    position: absolute;
+    inset: 1em;
+    background-color: grey;
+    background-image: url("/05.jpg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  .card{
+    background-color: tomato;
+    height: 70%;
+    width: 1000px;
+  }

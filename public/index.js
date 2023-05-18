@@ -1,9 +1,11 @@
 import navBar from "../components/navBar.js";
+import footer from "../components/footer.js";
 import fetchAPI from "../utils/dataFetching.js"
 import carousel from "../components/carousel.js"
 const postSection = document.querySelector(".index-posts")
 async function main(){
     navBar()
+    footer()
     const posts = await fetchAPI.posts("categories=7")
     carousel(posts)
     renderPosts(posts)
@@ -18,7 +20,7 @@ function renderPosts(posts){
         const currentPost = posts[i]
         const post = document.createElement("div")
         post.classList.add("post")
-
+        post.addEventListener("click", (e)=>document.location.href = `travels.html?id=${currentPost.id}`)
         const postImage = document.createElement("img")
         postImage.src = currentPost.image
         
@@ -27,7 +29,7 @@ function renderPosts(posts){
         const postTitle = document.createElement("h2")
         postTitle.classList.add("post-title")
         postTitle.textContent = currentPost.title
-        postTitle.addEventListener("click", (e)=>document.location.href = `travels.html?id=${currentPost.id}`)
+        
         const dateContainer = document.createElement("div")
         dateContainer.classList.add("date-container")
         const dateMonth = document.createElement("p")
@@ -37,11 +39,8 @@ function renderPosts(posts){
         dateDay.classList.add("post-date")
         dateDay.textContent = currentPost.date.slice(4,6)
         dateContainer.append(dateMonth, dateDay)
-        const readMore = document.createElement("p")
-        readMore.classList.add("readmore")
-        readMore.textContent = "Read More"
-        readMore.addEventListener("click", (e)=>document.location.href = `travels.html?id=${currentPost.id}`)
-        postDetailsContainer.append(postTitle, dateContainer, readMore)
+
+        postDetailsContainer.append(postTitle, dateContainer)
 
         const subtitle = document.createElement("h3")
         subtitle.classList.add("post-subtitle")
