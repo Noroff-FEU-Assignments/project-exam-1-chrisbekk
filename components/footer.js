@@ -7,6 +7,6 @@ function footer(){
         footerElement.classList.toggle("show")
         document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true"
     })
-}
+} 
 
 export default footer

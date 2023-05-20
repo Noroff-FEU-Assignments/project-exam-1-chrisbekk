@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2f05bfb463.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="public/index.js" defer type="module"></script>
-    <title>Moving Pictures</title>
+    <script src="public/post.js" defer type="module"></script>
+    <title>Travels</title>
 </head>
 <body>
     <header class="container">
-        <h1 class="header-title"><a href="index.html"></a>Moving Pictures</a></h1>
+        <h1 class="header-title"><a href="index.html">Moving Pictures</a></h1>
         <i class="fa-solid fa-bars fa-2xl icons hamburger-bars"></i>
         <nav>
             <a href="index.html" class="nav-item">Home</a>
@@ -20,26 +20,22 @@
             <a href="contact.html" class="nav-item">Contact</a>
         </nav>
     </header>
-    <main class="index container">
-        <section class="hero-header">
+    <main class="container">
+        <section class="post-item"></section>
+        <h2 class="section-header">Comments</h2>
+        <section class="comments-section">
+            <form class="form" id="comment-form">
+                
+                <div class="input-container">
+                    <label for="name">Name</label>
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input id="name" type="text" placeholder="Name" aria-placeholder="Your Name" required minlength="3" maxlength="25">
+                </div>
+                <textarea name="comment" id="comment" cols="30" rows="10" minlength="1"></textarea>
+                <button class="button" id="submit" role="button">Comment</button>
+            </form>
+            <div class="comments-container"></div>
         </section>
-        <section class="hero-section-widescreen">
-            
-            <div class="slider">
-                <div class="item"></div>
-                <div class="item"></div>
-                <div class="item"></div>    
-                <div class="item"></div>
-                <div class="item"></div>
-
-        
-                <button id="next">></button>
-                <button id="previous"><</button>
-            </div>
-            
-        </section>
-
-        
     </main>
     <footer class="container">
         <div class="nav-container">
