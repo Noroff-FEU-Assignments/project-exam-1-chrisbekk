@@ -1,5 +1,5 @@
 const fetchAPI = {
-    baseURL: ("https://theupload.wp-cms.online/wp-json/wp/v2/"),
+    baseURL: "https://theupload.wp-cms.online/wp-json/wp/v2/",
     domain: "https://theupload.local",
     featuredPostsURL: "https://theupload.wp-cms.online/wp-json/wp/v2/posts?categories=7&_embed",
     posts: async function(searchPara){
