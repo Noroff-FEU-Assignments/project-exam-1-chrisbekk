@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Hotjar Tracking Code for Moving Pictures -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3500173,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2f05bfb463.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="public/contact.js" defer type="module"></script>
+    <title>Travels</title>
+</head>
+<body>
+    <header class="container">
+        <h1 class="header-title"><a href="index.html">Moving Pictures</a></h1>
+        <i class="fa-solid fa-bars fa-2xl icons hamburger-bars"></i>
+        <nav>
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="posts.html" class="nav-item">Travels</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+    </header>
+    <main class="container">
+
+        <section class="contact">
+            <div class="valid-container">
+                <object type="image/svg+xml" data="/assets/success.svg"></object>
+                <p>Thank you for your request. I will get back to you as soon as possible</p>
+                <a href="index.html">Back to home page</a>
+            </div>
+            <form class="form" id="contact-form">
+                
+                <div class="input-container">
+                    <label for="name">Name</label>
+                    <i class="fa-regular fa-user input-icon"></i>
+                    <input id="name" type="text" placeholder="Name" aria-placeholder="Your Name" required minlength="5" maxlength="25">
+                </div>
+                <div class="input-container">
+                    <label for="email">Your e-mail address</label>
+                    <i class="fa-regular fa-envelope input-icon"></i>
+                    <input id="email" type="text" placeholder="E-mail" aria-placeholder="Your e-mail address" required minlength="3" maxlength="25">
+                </div>
+                <div class="input-container">
+                    <label for="subject">Subject</label>
+                    <i class="fa-regular fa-message input-icon"></i>
+                    <input id="subject" type="text" placeholder="Subject" aria-placeholder="Subject" required minlength="15" maxlength="25">
+                </div>
+
+                <textarea name="comment" id="comment" cols="30" rows="10" minlength="25"></textarea>
+                <button class="button" id="submit" role="button">Comment</button>
+            </form>
+            
+        </section>
+    </main>
+    <footer class="container">
+        <div class="nav-container">
+            <h2>Moving Pictures</h2>
+            <p>Back to top</p>
+        </div>
+        
+        <div class="nav-container">
+            <h3>Navigation</h3>
+            <nav data-visible="true">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="posts.html" class="nav-item">Travels</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
