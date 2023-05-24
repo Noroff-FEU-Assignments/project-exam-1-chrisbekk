@@ -13,7 +13,7 @@ function renderCommment(comment){
     commentAuthor.textContent = comment.author_name
     const commentAvatar = document.createElement("object")
     commentAvatar.type = "image/svg+xml"
-    commentAvatar.data = "/assets/comment_avatar.svg"
+    commentAvatar.data = "../public/assets/comment_avatar.svg"
     avatarContainer.append(commentAvatar, commentAuthor)
     
 
