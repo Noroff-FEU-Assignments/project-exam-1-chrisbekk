@@ -1,7 +1,9 @@
+import navBar from "../components/navBar.js"
+
 const formElement = document.querySelector(".form")
-const validElement = document.querySelector(".valid-container")
+const validElement = document.querySelector(".success-container")
 function main(){
-    console.log("check")
+    navBar()
     inputHandler()
 
 }
@@ -24,8 +26,8 @@ function inputHandler(){
 
             
             else{
-                e.target.parentElement.querySelector("i").style.color = "#89DFCA"
-                e.target.addEventListener("focusout", (e)=>{e.target.parentElement.querySelector("i").style.color = "#89DFCA"})
+                e.target.parentElement.querySelector("i").style.color = "#009883"
+                e.target.addEventListener("focusout", (e)=>{e.target.parentElement.querySelector("i").style.color = "#009883"})
                 e.target.dataset.valid = true
             }
         })
@@ -42,8 +44,8 @@ function inputHandler(){
 
         
         else{
-            e.target.style.color = "1px solid #89DFCA"
-            e.target.addEventListener("focusout", (e)=>{e.target.style.border = "1px solid #89DFCA"})
+            e.target.style.color = "1px solid #009883"
+            e.target.addEventListener("focusout", (e)=>{e.target.style.border = "1px solid #009883"})
             e.target.dataset.valid = true
         }
     })
@@ -52,8 +54,8 @@ function inputHandler(){
         const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         console.log(e.target)
         if(e.target.value.match(validRegex)){
-            e.target.parentElement.querySelector("i").style.color = "#89DFCA"
-            e.target.addEventListener("focusout", (e)=>{e.target.parentElement.querySelector("i").style.color = "#89DFCA"})
+            e.target.parentElement.querySelector("i").style.color = "#009883"
+            e.target.addEventListener("focusout", (e)=>{e.target.parentElement.querySelector("i").style.color = "#009883"})
             e.target.dataset.valid = true
         }
     
@@ -93,6 +95,3 @@ function validateForm(){
        
     }
 }
-
-
-

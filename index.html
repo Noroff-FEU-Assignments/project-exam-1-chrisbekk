@@ -1,74 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Hotjar Tracking Code for Moving Pictures -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:3500173,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/2f05bfb463.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="public/index.js" defer type="module"></script>
-    <title>Moving Pictures</title>
+    <script src="/public/index.js" defer type="module"></script>
+    <title>falseSummits</title>
 </head>
 <body>
     <header class="container">
-        <h1 class="header-title"><a href="index.html"></a>Moving Pictures</a></h1>
-        <i class="fa-solid fa-bars fa-2xl icons hamburger-bars"></i>
+        <div class="logo-container">
+            <object type = "image/svg+xml" data="/public/assets/logo.svg"></object>
+            <p class="logo-title">false<span>Summits</span></p>
+        </div>
+        <i class="fa-solid fa-bars icons navigation-icon"></i>
         <nav>
             <a href="index.html" class="nav-item">Home</a>
-            <a href="posts.html" class="nav-item">Travels</a>
+            <a href="posts.html" class="nav-item">Expeditions</a>
             <a href="about.html" class="nav-item">About</a>
             <a href="contact.html" class="nav-item">Contact</a>
         </nav>
+        
     </header>
-    <main class="index container">
-        <section class="hero-header">
-        </section>
-        <section class="hero-section-widescreen">
-            
-            <div class="slider">
-                <div class="item"></div>
-                <div class="item"></div>
-                <div class="item"></div>    
-                <div class="item"></div>
-                <div class="item"></div>
-
-        
-                <button id="next">></button>
-                <button id="previous"><</button>
+    <main class="container">
+        <section class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">WEBSITE SLOGAN</h1>
+                <h2 class="hero-subtitle">A blog about pushing boundaries. Join me on my expeditions</h2>
+                <button class="button btn" id="hero-btn">To Expeditions</button>
             </div>
-            
+        </section>
+        <h1 class="section-header">Latest <span>Expeditions</span></h1>
+        <section class="carousel-section">
+
+            <div class="carousel">
+                <div class="slider">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+    
+                    <button id="next">></button>
+                    <button id="prev"><</button>
+                </div>
+    
+            </div>
         </section>
 
-        
+        <section class="blog-collection-container">
+            <h1 class="section-header">Featured <span>Expeditions</span></h1>
+
+            <div class="blog-container">
+
+            </div>
+        </section>
     </main>
     <footer class="container">
-        <div class="nav-container">
-            <h2>Moving Pictures</h2>
-            <p>Back to top</p>
+        <p class="footer-title">false<span>Summits</span></p>
+        <div class="footer-nav">
+            <a href="#top">Back to Top</a>
+            <a href="index.html">Home</a>
+            <a href="posts.html">Expeditions</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </div>
-        
-        <div class="nav-container">
-            <h3>Navigation</h3>
-            <nav data-visible="true">
-                <a href="index.html" class="nav-item">Home</a>
-                <a href="posts.html" class="nav-item">Travels</a>
-                <a href="about.html" class="nav-item">About</a>
-                <a href="contact.html" class="nav-item">Contact</a>
-            </nav>
+        <div class="socials-container">
+            <object type = "image/svg+xml" data="/public/assets/twitter.svg"></object>
+            <object type = "image/svg+xml" data="/public/assets/facebook.svg"></object>
+            <object type = "image/svg+xml" data="/public/assets/instagram.svg"></object>
         </div>
-
     </footer>
+
     
 </body>
 </html>

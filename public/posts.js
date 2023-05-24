@@ -1,23 +1,43 @@
-import renderPost from "../components/renderPost.js";
-import fetchAPI from "../utils/dataFetching.js";
-const latestPosts = document.querySelector(".latest")
-const postSection = document.querySelector(".post-section")
+import fetchAPI from "../utils/dataFetching.js"
+import navBar from "../components/navBar.js"
+import renderBlogPost from "../components/blogPost.js"
+
+const blogContainer = document.querySelector(".blog-container")
+const addPostsBtn = document.getElementById("addPosts")
+
+
+
+
 
 async function main(){
-    const posts = await fetchAPI.posts()
-    console.log(posts)
-    
-    for(let i = 0; i < 4; i++){
-        latestPosts.append(renderPost(posts[i]))
-    }
-    for(let i = 4; i < posts.length; i++){
-        const container = document.createElement("div")
-        container.append(renderPost(posts[i]))
-        container.classList.add("wrapper")
-        container.style.setProperty("--background-image", `url(${posts[i].image})`)
-        postSection.append(container)
-    }
-    
-}
+    navBar()
 
+    let postCount = 10
+    let postIncrement = 10
+    const posts = await fetchAPI.posts(`per_page=${postCount}`)
+    
+    let indexStart = 0
+    for(let i = indexStart; i < postCount; i++){
+        blogContainer.append(renderBlogPost(posts[i]))
+    }
+    addPostsBtn.addEventListener("click", async (e)=>{
+        indexStart = postCount
+        postCount = postCount + postIncrement
+        const posts = await fetchAPI.posts(`per_page=${postCount}`)
+        for(let i = indexStart; i < posts.length; i++){
+           blogContainer.append(renderBlogPost(posts[i]))
+            
+       
+        }
+        if(postCount > posts.length){
+            const postLimit = document.createElement("p")
+            postLimit.classList.add("body-text")
+            postLimit.textContent = "There are no more posts. Await my next adventure!"
+            blogContainer.append(postLimit)
+            addPostsBtn.remove()
+        }
+    })
+
+}
 main()
+

@@ -1,56 +1,96 @@
-import renderPost from "../components/renderPost.js";
-import renderCommment from "../components/renderComment.js";
-import fetchAPI from "../utils/dataFetching.js";
 import queryString from "../utils/queryString.js";
+import fetchAPI from "../utils/dataFetching.js"
+import navBar from "../components/navBar.js";
+import renderCommment from "../components/renderComment.js";
+import postComment from "../utils/commentData.js";
+const article = document.querySelector("article")
 
-const postSection = document.querySelector(".post-item")
 const commentsContainer = document.querySelector(".comments-container")
 const name = document.getElementById("name")
 const comment = document.getElementById("comment")
 const submitBtn = document.getElementById("submit")
 const form = document.getElementById("comment-form")
-const postID = queryString()
 const emptyComments = document.createElement("h3")
-emptyComments.classList.add("section-subheader")
-emptyComments.textContent = "Be the first to comment"
-
+const modal = document.querySelector(".modal")
+const postID = queryString()
 
 
 async function main(){
-    
+    navBar()
     const post = await fetchAPI.getPost(postID)
-
+    article.append(blogArticle(post))
     const comments = await fetchAPI.getComments(postID)
     console.log(comments)
     comments.length === 0 ? commentsContainer.append(emptyComments) : comments.forEach(comment => commentsContainer.append(renderCommment(comment)))
+
     
-    const item = document.createElement("div")
-    item.classList.add("post")
-    const image = document.createElement("img")
-    image.src = post.fimg_url
-    
-    const title = document.createElement("h1")
-    title.classList.add("post-title")
-    title.textContent = post.title.rendered
-
-    item.append(image, title)
-    const content = post.content.rendered.split("</p>")
-    for(let i = 0; i < content.length; i++){
-        const paragraph = document.createElement("p")
-        paragraph.textContent = content[i]
-        item.append(paragraph)
-        console.log(paragraph)
-    }
-
-
-    postSection.append(item)
     inputHandler()
-
 }
 
 main()
 
+function blogArticle(post){
+    console.log(post)
+    const content = document.createElement("div")
+    content.classList.add("blog-post-container")
+    const imageContainer = document.createElement("div")
+    imageContainer.classList.add("blog-image-container")
+    const image = document.createElement("img")
+    image.classList.add("article-image")
+    image.src = post.image
+    modal.querySelector("img").src = post.image
+    image.addEventListener("click", (e)=>{
+        modal.showModal()
+        
+    })
+    modal.addEventListener("click", e => {
+        const dialogDimensions = modal.getBoundingClientRect()
+        if (
+          e.clientX < dialogDimensions.left ||
+          e.clientX > dialogDimensions.right ||
+          e.clientY < dialogDimensions.top ||
+          e.clientY > dialogDimensions.bottom
+        ) {
+          modal.close()
+        }
+      })
+    imageContainer.append(image)
 
+    const title = document.createElement("h1")
+    title.classList.add("blog-post-title")
+    title.textContent = post.title
+    imageContainer.append(title)
+
+    const subtitle = document.createElement("h2")
+    subtitle.classList.add("blog-post-subtitle")
+    subtitle.textContent = post.subtitle
+    imageContainer.append(subtitle)
+    content.append(imageContainer)
+
+    const ingress = document.createElement("p")
+    ingress.textContent = post.excerpt
+    ingress.classList.add("ingress")
+    content.append(ingress)
+    
+    const textContainer = document.createElement("div")
+    textContainer.classList.add("text-container")
+    
+    const paragraphs= post.content.split("</p>")
+    console.log(paragraphs)
+    for(let i = 0; i < paragraphs.length; i++){
+        const string = paragraphs[i]
+        const stringTagsRemoved= string.replaceAll(/<\/?[^>]+(>|$)/gi, "")
+        const paragraph = document.createElement("p")
+        paragraph.textContent = stringTagsRemoved
+        textContainer.append(paragraph)
+        
+    }
+    content.append(textContainer)
+
+    
+
+    return content
+}
 
 function inputHandler(){
     const input = document.querySelector("input")
@@ -99,10 +139,12 @@ function inputHandler(){
                 }
             
                 await fetchAPI.postComment(commentData)
+                const comments = await fetchAPI.getComments(postID, "per_page=1")
                 setTimeout(async() => {
-                    const res = await fetchAPI.getComments(postID)
+                    comments.forEach(comment => commentsContainer.append(renderCommment(comment)))
                     
-                }, 500);
+                }, 1000);
+                
                 form.reset()
             
         }
@@ -113,9 +155,5 @@ function inputHandler(){
     })
 
 }
-
-
-
-
 
 
