@@ -69,7 +69,7 @@ function inputHandler(){
     })
 
     button.addEventListener("click", (e)=> {
-        
+        e.preventDefault()
         validateForm()
         
     })
