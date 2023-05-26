@@ -791,6 +791,7 @@ article{
 .comment{
     display: flex;
     width: 70%;
+    max-width: 600px;
     min-height: 130px;
     margin: 2em;
     background-color: var(--color-black-variant);
@@ -1050,6 +1051,13 @@ article{
     margin-left: unset;
 }
 
+.comment .content-container div p{
+    font-size: .6rem;
+}
+.comment-content{
+    font-size: .9rem;
+}
+
 /* ===== FOMRS ===== */
 .form{
     width: 100%;
@@ -1239,7 +1247,7 @@ article{
 }
 
 .comment-section .section-header{
-    margin-left: 1em;
+    margin-left: .1em;
 }
 /* ===== FOMRS ===== */
 .form{
