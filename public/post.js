@@ -6,6 +6,8 @@ import postComment from "../utils/commentData.js";
 const article = document.querySelector("article")
 
 const commentsContainer = document.querySelector(".comments-container")
+const commentHeader = document.querySelector(".comment-section").querySelector(".section-header")
+
 const name = document.getElementById("name")
 const comment = document.getElementById("comment")
 const submitBtn = document.getElementById("submit")
@@ -20,7 +22,7 @@ async function main(){
     const post = await fetchAPI.getPost(postID)
     article.append(blogArticle(post))
     const comments = await fetchAPI.getComments(postID)
-    console.log(comments)
+    commentHeader.textContent += ` (${comments.length})`
     comments.length === 0 ? commentsContainer.append(emptyComments) : comments.forEach(comment => commentsContainer.append(renderCommment(comment)))
 
     
@@ -33,8 +35,6 @@ function blogArticle(post){
     console.log(post)
     const content = document.createElement("div")
     content.classList.add("blog-post-container")
-    const imageContainer = document.createElement("div")
-    imageContainer.classList.add("blog-image-container")
     const image = document.createElement("img")
     image.classList.add("article-image")
     image.src = post.image
@@ -54,18 +54,23 @@ function blogArticle(post){
           modal.close()
         }
       })
-    imageContainer.append(image)
+    
+    content.append(image)
 
     const title = document.createElement("h1")
     title.classList.add("blog-post-title")
     title.textContent = post.title
-    imageContainer.append(title)
+    content.append(title)
+
+    const date = document.createElement("p")
+    date.classList.add("blog-post-date")
+    date.textContent = post.date
+    content.append(date)
 
     const subtitle = document.createElement("h2")
     subtitle.classList.add("blog-post-subtitle")
     subtitle.textContent = post.subtitle
-    imageContainer.append(subtitle)
-    content.append(imageContainer)
+    content.append(subtitle)
 
     const ingress = document.createElement("p")
     ingress.textContent = post.excerpt
@@ -142,7 +147,7 @@ function inputHandler(){
                 const comments = await fetchAPI.getComments(postID, "per_page=1")
                 setTimeout(async() => {
                     comments.forEach(comment => commentsContainer.append(renderCommment(comment)))
-                    
+                    commentHeader.textContent += ` (${comments.length})`
                 }, 1000);
                 
                 form.reset()

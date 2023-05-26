@@ -1,6 +1,12 @@
 function renderBlogPost(post){
+    console.log(post)
     const postCard = document.createElement("div")
     postCard.classList.add("post-card")
+    
+    for(let i = 0; i < post.category.length; i++){
+        const cat = `category-${i}`
+        postCard.setAttribute(cat, post.category[i])
+    }
     
     const image = document.createElement("img")
     image.src = post.image
@@ -26,7 +32,12 @@ function renderBlogPost(post){
         document.location.href = `post.html?id=${post.id}`
     })
     blogDetails.append(button)
-    
+
+
+    const date = document.createElement("p")
+    date.classList.add("blog-date")
+    date.textContent = post.date
+    postCard.append(date)    
     postCard.append(blogDetails)
 
     return postCard
