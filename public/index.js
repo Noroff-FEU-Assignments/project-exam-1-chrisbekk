@@ -7,6 +7,7 @@ const next = document.getElementById("next")
 const prev = document.getElementById("prev")
 const itemNodes = document.querySelectorAll(".item")
 const blogContainer = document.querySelector(".blog-container")
+const latestPosts = document.querySelector(".latest-posts")
 const heroBtn = document.getElementById("hero-btn")
 
 let active = 2
@@ -31,7 +32,8 @@ async function main(){
     })
 
     heroBtn.addEventListener("click", (e)=> document.location.href = "posts.html")
-
+    const latest = await fetchAPI.posts("per_page=5")
+    latest.forEach(post => latestPosts.append(renderBlogPost(post)))
 }
 
 main()
@@ -68,10 +70,13 @@ async function carouselPosts(){
         const title = document.createElement("h2")
         title.classList.add("post-title")
         item.style.backgroundImage = `url(${data.image})`
+        const date = document.createElement("p")
+        date.classList.add("blog-date")
+        date.textContent = posts[i].date
         const subtitle = document.createElement("p")
         subtitle.classList.add("post-subtitle")
         subtitle.textContent = data.subtitle
-        item.append(title, subtitle)
+        item.append(title, subtitle, date)
         title.textContent = data.title
         item.addEventListener("click", (e)=>{
             document.location.href = `post.html?id=${data.id}`
