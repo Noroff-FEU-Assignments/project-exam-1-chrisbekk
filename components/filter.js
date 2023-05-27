@@ -2,7 +2,6 @@ function filterHandler(){
     const posts = document.querySelectorAll(".post-card")
     const filterBtns = document.querySelector(".filter-btns").children
     const header = document.querySelector(".section-header")
-    console.log(filterBtns)
     
     for(let i = 0; i < filterBtns.length; i++){
         

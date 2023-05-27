@@ -13,7 +13,6 @@ main()
 function inputHandler(){
     const inputs = document.querySelectorAll("#name, #subject")
     const mail = document.querySelector("#email")
-    console.log(mail)
     const textarea = document.querySelector("textarea")
     const button = document.querySelector("button")
     inputs.forEach(input =>{
@@ -52,7 +51,6 @@ function inputHandler(){
 
     mail.addEventListener("change", (e)=>{
         const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        console.log(e.target)
         if(e.target.value.replace(/\s/g, '').match(validRegex)){
             e.target.parentElement.querySelector("i").style.color = "#009883"
             e.target.addEventListener("focusout", (e)=>{e.target.parentElement.querySelector("i").style.color = "#009883"})
@@ -77,14 +75,10 @@ function inputHandler(){
 
 function validateForm(){
     const form = document.querySelector("form")
-    console.log(form.querySelectorAll("input, textarea"))
     const inputNode = form.querySelectorAll("input, textarea")
     const arr = []
     inputNode.forEach(input =>{
-        arr.push(input.dataset.valid)
-        console.log(input.dataset.valid)
-        
-        
+        arr.push(input.dataset.valid)        
     })
     if(arr.every(el => el == "true")){
         formElement.style.display = "none"

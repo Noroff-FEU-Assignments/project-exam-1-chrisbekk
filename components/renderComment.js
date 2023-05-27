@@ -3,7 +3,7 @@ function renderCommment(comment){
     const contentString = removeOuterTags(comment.content.rendered)
     const date = comment.date.slice(0, 10)
     const time = comment.date.slice(14, 19)
-    console.log(comment)
+
     const commentCard = document.createElement("div")
     commentCard.classList.add("comment")
     
@@ -15,8 +15,6 @@ function renderCommment(comment){
     commentAvatar.type = "image/svg+xml"
     commentAvatar.data = "../public/assets/logo.svg"
     avatarContainer.append(commentAvatar, commentAuthor)
-    
-
     
     const contentContainer = document.createElement("div")
     contentContainer.classList.add("content-container")
@@ -34,10 +32,6 @@ function renderCommment(comment){
     contentContainer.append(contentDetails, content)
     commentCard.append(avatarContainer, contentContainer)
 
-
-    
-    
-    
     return commentCard
     
 }

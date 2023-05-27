@@ -1,5 +1,4 @@
 function renderBlogPost(post){
-    console.log(post)
     const postCard = document.createElement("div")
     postCard.classList.add("post-card")
     
