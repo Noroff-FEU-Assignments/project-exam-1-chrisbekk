@@ -17,20 +17,24 @@
     box-sizing: border-box;
 }
 
+html{
+    /* overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; */
+}
+
 html, body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    
-    scroll-behavior: smooth;
 }
 body{
     background-color: var(--color-black);
-    
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100dvh;
 }
 
 .main{
@@ -231,7 +235,8 @@ p span{
 .post-card::after{
     background-color: var(--color-brand-primary);
     content: " ";
-    width: 500px;
+    width: 40%;
+    max-width: 500px;
     height: 2px;
     position: absolute;
     bottom: -50px;
@@ -926,7 +931,7 @@ article{
     }
 
     nav{
-        
+        min-height: 100vh;
         width: 250px;
         position: absolute;
         display: flex;
@@ -936,7 +941,7 @@ article{
         background-color: #1e1e1eda;
         transition: 600ms;
         z-index: 9;
-        transform: translateX(-250px);
+        transform: translateX(-300px);
         transition: .5s ease-in-out;
 
     }
@@ -947,7 +952,7 @@ article{
     }
     .show{
         transform: translateX(0);
-        height: 100vh;      
+           
     }
 
     /* ===== CAROUSEL / LATEST ==== */
@@ -1118,7 +1123,7 @@ input, textarea{
     }
     nav{
         width: 350px;
-        height: 100vh;
+        min-height: 100vh;
         position: absolute;
         display: flex;
         flex-direction: column;

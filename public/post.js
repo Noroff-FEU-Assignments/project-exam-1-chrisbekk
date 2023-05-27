@@ -118,7 +118,7 @@ function inputHandler(){
     })
 
     textarea.addEventListener("input", (e)=>{
-        if(e.target.value.length < e.target.maxLength){
+        if(e.target.value.replace(/\s/g, '').length < e.target.maxLength){
             e.target.style.border = "1px solid #D8737F"
             
         }
