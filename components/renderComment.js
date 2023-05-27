@@ -14,6 +14,7 @@ function renderCommment(comment){
     const commentAvatar = document.createElement("object")
     commentAvatar.type = "image/svg+xml"
     commentAvatar.data = "../public/assets/logo.svg"
+    commentAvatar.ariaHidden = true
     avatarContainer.append(commentAvatar, commentAuthor)
     
     const contentContainer = document.createElement("div")
