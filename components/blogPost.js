@@ -10,6 +10,7 @@ function renderBlogPost(post){
     
     const image = document.createElement("img")
     image.src = post.image
+    image.alt = post.alt
     postCard.append(image)
 
     const blogDetails = document.createElement("div")
@@ -28,6 +29,8 @@ function renderBlogPost(post){
     const button = document.createElement("button")
     button.classList.add("button")
     button.textContent = "Read"
+    button.role = "button"
+    button.ariaLabel = "Read Post"
     button.addEventListener("click", (e)=>{
         document.location.href = `post.html?id=${post.id}`
     })

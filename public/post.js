@@ -38,6 +38,7 @@ function blogArticle(post){
     const image = document.createElement("img")
     image.classList.add("article-image")
     image.src = post.image
+    image.alt = post.alt
     modal.querySelector("img").src = post.image
     image.addEventListener("click", (e)=>{
         modal.showModal()
@@ -104,7 +105,7 @@ function inputHandler(){
     console.log(input.minLength)
     input.oninput = (e)=>{console.log(e.target.value)}
     input.addEventListener("input", (e)=>{
-        if(e.target.value.length < e.target.minLength){
+        if(e.target.value.replace(/\s/g, '').length < e.target.minLength){
             e.target.parentElement.querySelector("i").style.color = "#D8737F"
             e.target.addEventListener("focusout", (e)=> e.target.value.length === 0 ? e.target.parentElement.querySelector("i").style.color = "#1E1E1E" : null)
         }

@@ -22,6 +22,7 @@ async function main(){
     }
     filterHandler()
     addPostsBtn.addEventListener("click", async (e)=>{
+        
         indexStart = postCount
         postCount = postCount + postIncrement
         const posts = await fetchAPI.posts(`per_page=${postCount}`)
