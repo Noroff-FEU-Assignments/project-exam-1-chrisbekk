@@ -29,10 +29,10 @@
         <i class="fa-solid fa-bars fa-xl icons navigation-icon"></i>
         <dialog></dialog>
         <nav>
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="posts.html" class="nav-item">Expeditions</a>
-            <a href="about.html" class="nav-item">About</a>
-            <a href="contact.html" class="nav-item">Contact</a>
+            <a href="index.html" class="nav-item" aria-label="Go to home page">Home</a>
+            <a href="posts.html" class="nav-item" aria-label="Go to list of blog posts">Expeditions</a>
+            <a href="about.html" class="nav-item" aria-label="Go to about page">About</a>
+            <a href="contact.html" class="nav-item" aria-label="Go to contact page">Contact</a>
         </nav>
         
     </header>
@@ -51,6 +51,7 @@
                     <i class="fa-solid fa-user input-icon"></i>
                     <input id="name" type="text" placeholder="Name" aria-placeholder="Your Name" required minlength="3" maxlength="25">
                 </div>
+                <label for="comment">Your message</label>
                 <textarea name="comment" id="comment" cols="30" rows="10" minlength="1"></textarea>
                 <button class="button" id="submit" role="button">Comment</button>
             </form>
