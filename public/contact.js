@@ -18,7 +18,7 @@ function inputHandler(){
     const button = document.querySelector("button")
     inputs.forEach(input =>{
         input.addEventListener("input", (e)=>{
-            if(e.target.value.length < e.target.minLength){
+            if(e.target.value.replace(/\s/g, '').length < e.target.minLength){
                 e.target.parentElement.querySelector("i").style.color = "#D8737F"
                 e.target.addEventListener("focusout", (e)=> e.target.parentElement.querySelector("i").style.color = "#D8737F")
                 e.target.dataset.valid = false
@@ -35,7 +35,7 @@ function inputHandler(){
 
 
     textarea.addEventListener("input", (e)=>{
-        if(e.target.value.length < e.target.minLength){
+        if(e.target.value.replace(/\s/g, '').length < e.target.minLength){
             e.target.style.border = "1px solid #D8737F"
             e.target.addEventListener("focusout", (e)=> e.target.style.border = "1px solid #D8737F")
             e.target.dataset.valid = false
@@ -53,7 +53,7 @@ function inputHandler(){
     mail.addEventListener("change", (e)=>{
         const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         console.log(e.target)
-        if(e.target.value.match(validRegex)){
+        if(e.target.value.replace(/\s/g, '').match(validRegex)){
             e.target.parentElement.querySelector("i").style.color = "#009883"
             e.target.addEventListener("focusout", (e)=>{e.target.parentElement.querySelector("i").style.color = "#009883"})
             e.target.dataset.valid = true

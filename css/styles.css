@@ -21,10 +21,12 @@ html, body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    
+    scroll-behavior: smooth;
 }
 body{
     background-color: var(--color-black);
-
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -159,10 +161,14 @@ p span{
     color: var(--color-white);
     margin-bottom: 1.5em;
     margin-top: 1em;
+    margin-left: .5em;
     font-family: var(--font-family);
     font-size: 2rem;
     letter-spacing: 0.02em;
     font-weight: 400;
+    border-bottom: 1px solid var(--color-brand-primary);
+    width: 40%;
+    max-width: 500px;
 }
 
 .section-header span{
@@ -194,16 +200,30 @@ p span{
     margin-bottom: 6em;
 }
 
-.hide{
-    display: none;
-}
-
-.filter{
-    display: block;
-}
-
 .filter-container{
     display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 60%;
+    max-width: 600px;
+}
+
+.filter-container p{
+    color: var(--color-white);
+    font-family: var(--font-family);
+}
+
+.filter-btns{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.filter-btns .button{
+    padding: unset;
+    padding: .1em .2em;
+    text-align: center;
 }
 
 
@@ -258,11 +278,11 @@ p span{
     color: var(--color-brand-primary);
     font-family: var(--font-family);
     background-color: var(--color-black-text-background);
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding: .1em .1em;
     width: fit-content;
     position: absolute;
     top: 0;
-
 }
 
 /* ======= SOCIALS CONTAINER ====== */
@@ -287,6 +307,10 @@ footer{
     font-family: var(--font-family);
     font-size: 2rem;
     
+}
+
+.footer-title span{
+    color: var(--color-brand-primary);
 }
 
 .footer-nav{
@@ -842,10 +866,7 @@ article{
 }
 
 /* === FILTER SECTION === */
-.filter-container .button[data-clicked="true"]{
-    background-color: var(--color-brand-secondary);
-    color: var(--color-white);
-}
+
 /* ======================= MEDIA QUERYS =================== */
 
 @media (max-width: 425px){
@@ -905,8 +926,8 @@ article{
     }
 
     nav{
+        
         width: 250px;
-        height: 100vh;
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -926,11 +947,7 @@ article{
     }
     .show{
         transform: translateX(0);
-    
-    }
-    .show{
-        display: flex;
-        
+        height: 100vh;      
     }
 
     /* ===== CAROUSEL / LATEST ==== */
@@ -982,6 +999,13 @@ article{
         font-weight: 400;
         max-width: 280px;
     
+    }
+    .blog-date{
+        font-size: 1rem;
+    }
+    .filter-btns{
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: .1em;
     }
         /* ============= BLOG ARTICLE ============ */
 
@@ -1181,6 +1205,14 @@ input, textarea{
         font-weight: 400;
         max-width: 280px;
     
+    }
+    .blog-date{
+        font-size: 1rem;
+    }
+
+    .filter-btns{
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: .2em;
     }
 
     /* ============= BLOG ARTICLE ============ */

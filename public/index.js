@@ -70,6 +70,8 @@ async function carouselPosts(){
         const title = document.createElement("h2")
         title.classList.add("post-title")
         item.style.backgroundImage = `url(${data.image})`
+        item.ariaLabel = posts[i].alt
+        item.role = "button"
         const date = document.createElement("p")
         date.classList.add("blog-date")
         date.textContent = posts[i].date
