@@ -17,13 +17,6 @@
     box-sizing: border-box;
 }
 
-html{
-    /* overflow-y: auto;
-    overscroll-behavior-y: contain;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth; */
-}
-
 html, body{
     margin: 0;
     padding: 0;
@@ -422,11 +415,17 @@ footer{
     font-size: xxx-large;
     font-weight: bold;
     left: 5%;
+
 }
 
 #next{
     left: unset;
     right: 5%;
+}
+
+#next:hover, #prev:hover{
+    cursor: pointer;
+    color: var(--color-brand-secondary);
 }
 
 
@@ -484,7 +483,7 @@ input{
 
 label{
     font-family: var(--font-family);
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 .input-icon{
@@ -794,6 +793,11 @@ article{
 .modal::backdrop{
     background-color: #1e1e1ee5;
 }
+
+.modal::backdrop:hover{
+    cursor: pointer;
+}
+
 .article-image{
     width: 100%;
 }
@@ -1058,9 +1062,7 @@ article{
     width: 70%;
 }
 
-.modal::backdrop{
-    background-color: #1e1e1ee5;
-}
+
 .article-image{
     width: 100%;
     aspect-ratio: 3/2;
@@ -1264,9 +1266,6 @@ article{
     width: 70%;
 }
 
-.modal::backdrop{
-    background-color: #1e1e1ee5;
-}
 .article-image{
     width: 100%;
     aspect-ratio: 2/1;

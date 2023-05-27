@@ -24,15 +24,14 @@ async function main(){
     const comments = await fetchAPI.getComments(postID)
     commentHeader.textContent += ` (${comments.length})`
     comments.length === 0 ? commentsContainer.append(emptyComments) : comments.forEach(comment => commentsContainer.append(renderCommment(comment)))
-
-    
+    document.title += ` ${post.title}`
+    document.querySelector('meta[name="description"]').setAttribute("content", post.excerpt)
     inputHandler()
 }
 
 main()
 
 function blogArticle(post){
-    console.log(post)
     const content = document.createElement("div")
     content.classList.add("blog-post-container")
     const image = document.createElement("img")
@@ -82,7 +81,6 @@ function blogArticle(post){
     textContainer.classList.add("text-container")
     
     const paragraphs= post.content.split("</p>")
-    console.log(paragraphs)
     for(let i = 0; i < paragraphs.length; i++){
         const string = paragraphs[i]
         const stringTagsRemoved= string.replaceAll(/<\/?[^>]+(>|$)/gi, "")
@@ -102,7 +100,6 @@ function inputHandler(){
     const input = document.querySelector("input")
     const textarea = document.querySelector("textarea")
     const button = document.querySelector("button")
-    console.log(input.minLength)
     input.oninput = (e)=>{console.log(e.target.value)}
     input.addEventListener("input", (e)=>{
         if(e.target.value.replace(/\s/g, '').length < e.target.minLength){
