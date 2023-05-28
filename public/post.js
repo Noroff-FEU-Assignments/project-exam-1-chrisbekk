@@ -14,6 +14,7 @@ const submitBtn = document.getElementById("submit")
 const form = document.getElementById("comment-form")
 const emptyComments = document.createElement("h3")
 const modal = document.querySelector(".modal")
+const modalImg = document.querySelector("modal-img")
 const postID = queryString()
 
 
@@ -39,6 +40,7 @@ function blogArticle(post){
     image.src = post.image
     image.alt = post.alt
     modal.querySelector("img").src = post.image
+    modal.querySelector("img").alt = post.excerpt
     image.addEventListener("click", (e)=>{
         modal.showModal()
         
