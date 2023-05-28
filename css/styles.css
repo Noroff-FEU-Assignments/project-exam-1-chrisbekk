@@ -5,7 +5,7 @@
     --color-brand-secondary: #009883;
     --color-black: #1E1E1E;
     --color-black-variant: #323030;
-    --color-black-transparent: #00000030;
+    --color-black-transparent: #00000048;
     --color-black-text-background: #00000060;
     --color-white: #ffffff;
     --color-white-transparent: #ffffff30;
@@ -201,7 +201,7 @@ p span{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 7em;
     width: 60%;
     max-width: 600px;
 }
@@ -285,8 +285,8 @@ p span{
 
 /* ======= SOCIALS CONTAINER ====== */
 
-.socials-container object{
-    margin-left: 2em;
+.socials-container i{
+    margin-left: 1.2em;
 }
 
 /* ==== FOOTER ==== */
@@ -297,11 +297,12 @@ footer{
     display: flex;
     justify-content: space-between;
     padding: 0 1em;
+
 }
 
 .footer-title{
     color: var(--color-white);
-
+    
     font-family: var(--font-family);
     font-size: 2rem;
     
@@ -320,13 +321,15 @@ footer{
 .footer-nav a{
     color: var(--color-white);
     font-family: var(--font-family);
-    margin-left: 1em;
+    
     margin-bottom: .5em;
+    
 
 }
 
 .footer-nav a:hover{
     color: var(--color-brand-primary);
+
 }
 
 /* ========== CAROUSEL ============= */
@@ -689,30 +692,12 @@ header:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5em 0;
+    margin: 2em 0;
+    margin-top: 3em;
+    max-width: 600px;
+    text-align: justify;
 }
 
-
-.about-container{
-    background-image: url("/public/assets/about-background.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    height: 40vh;
-    width: 100%;
-    position: relative;
-
-}
-
-.about-container p{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    font-size: 1.5rem;
-    text-align: center;
-}
 
 
 /* ============= BLOG ARTICLE ============ */
@@ -800,11 +785,14 @@ article{
 
 .article-image{
     width: 100%;
+    aspect-ratio: 2/1;
 }
 
-#addPosts{
-    position: absolute;
-    left: calc(50% - 45px);
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
 }
 
 
@@ -973,17 +961,16 @@ article{
     footer{
         flex-direction: column;
         align-items: center;
+
     }
 
     .footer-nav{
+        width: 100%;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         font-size: .6rem;
     }
-        
-
-
-
 
     /* ========= POST CARD ==============*/
 
@@ -1065,7 +1052,7 @@ article{
 
 .article-image{
     width: 100%;
-    aspect-ratio: 3/2;
+    aspect-ratio: 2/1;
 }
 
 .modal p{
@@ -1098,7 +1085,9 @@ input, textarea{
     width: 90%;
 }
 
-
+.about-section span p{
+    font-size: 1rem;
+}
 
 }
 
@@ -1186,9 +1175,11 @@ input, textarea{
     }
     
     .footer-nav{
+        width: 100%;
         display: flex;
         flex-direction: row;
         font-size: .8rem;
+        justify-content: space-between;
     }
 
     /* ======== POST CARD ========== */
@@ -1293,6 +1284,9 @@ article{
 }
 input, textarea{
     width: 90%;
+}
+.about-section span p{
+    font-size: 1rem;
 }
 }
 
