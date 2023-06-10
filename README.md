@@ -29,7 +29,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Gamehub E-commerce Store</h3>
+<h3 align="center">falseSummits blog</h3>
 
 
 </div>
@@ -66,10 +66,9 @@
 
 [![Product Name Screen Shot][product-screenshot]](/images/project-exam-1_sc.png)
 
-Gamehub is a e-commerce site focusing on games.
-The project is a cross-course assignment at Noroff, where the students are asked to display skills within HTML, CSS, Javascript, web design and CMS.
-
-The site is primarily running static files, but the product images are fetched via the Wordpress API.
+This was an exam project to conclude the first year of my frontend studies. The task was to build a blog site using HTML, CSS and Javascript. The blog uses WordPress as the content management system, and the WordPress API is used to fetch the blog posts.
+Using WordPress in headless mode combined with the WordPress API allows for an easy way of managing the blog posts, while at the same time allowing for flexibility for the developer.
+For the blog posts, I decided to use the Midjourney AI to generate the images. This allowed me to get images that looked interesting, and provided the site with a certain visual consistency. I believe that AI technology can be a useful tool that compliments the skills of the developer, which will improve the end result for the client.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -89,7 +88,7 @@ The site is primarily running static files, but the product images are fetched v
 <!-- GETTING STARTED -->
 ## Getting Started
 Visit the site on Netlify.
-<p><a href="https://strong-crumble-b73f77.netlify.app/">Link to site</a></p>
+<p><a href="https://calm-zabaione-e62dcc.netlify.app">Link to site</a></p>
 
 **The backend services responsible for fetching product images, are at the moment not available.**
 
